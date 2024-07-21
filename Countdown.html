@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MC Championship Event Bedrock</title>
+    <style>
+   @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+    </style>
+
+    <style>
+
+.passion-one-regular {
+  font-family: "Passion One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.passion-one-bold {
+  font-family: "Passion One", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.passion-one-black {
+  font-family: "Passion One", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+        
+        
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #countdown {
+            font-size: 36px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body bgcolor="#ff9900">
+    <img src="logo.webp"
+    <br>
+    
+    <center><h1>MCC Championship Event Bedrock Countdown!</h1></center>
+    <p id="countdown"></p>
+    <script>
+        // Set the target date and time (in PST)
+        const targetDate = new Date("2024-07-22T10:00:00-07:00");
+
+        // Update the countdown timer every second
+        const intervalId = setInterval(function() {
+            const currentDate = new Date();
+            const totalSeconds = Math.floor((targetDate - currentDate) / 1000);
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(totalSeconds / (3600 * 24));
+            const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = Math.floor(totalSeconds % 60);
+
+            // Format the countdown string
+            const countdownString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // Update the countdown element
+            document.getElementById("countdown").textContent = countdownString;
+
+            // Check if countdown has finished
+            if (totalSeconds <= 0) {
+                clearInterval(intervalId);
+                document.getElementById("countdown").textContent = "Time's Up!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
